@@ -63,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform 0.2s ease, background-color 0.3s ease;
     cursor: pointer;
     overflow: hidden; /* Adicionado para garantir consistência */
+    justify-content: center;
 }
 
 .btn:hover,
@@ -200,23 +201,23 @@ h1, h2, h3, h4, h5, h6 {
     color: #FFFFFF;
 }
 
-.about-list {
+.feature-list {
     list-style: none;
     margin-bottom: 40px;
 }
 
-.about-list li {
+.feature-list li {
     padding-left: 35px;
     position: relative;
     font-size: 18px;
     line-height: 1.6;
 }
 
-.about-list li + li {
+.feature-list li + li {
     margin-top: 20px;
 }
 
-.about-list li::before {
+.feature-list li::before {
     content: '✔';
     position: absolute;
     left: 0;
@@ -368,4 +369,53 @@ h1, h2, h3, h4, h5, h6 {
 .swiper-button-next::after,
 .swiper-button-prev::after {
     font-size: 20px;
+}
+
+/* ==========================================================================
+   7. FINAL CTA SECTION STYLES
+   ========================================================================== */
+
+.final-cta {
+    padding: 80px 0;
+    background-color: var(--color-background);
+}
+
+.cta-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Coluna de texto um pouco maior */
+    align-items: center;
+    gap: 80px;
+}
+
+.cta-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes no título da seção para este contexto */
+.cta-text .section-title {
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.cta-text .section-title span {
+    font-size: 24px;
+}
+
+.cta-description {
+    font-size: 18px;
+    margin-bottom: 32px;
+    opacity: 0.9;
+}
+
+/* Ajuste no espaçamento da lista e do botão */
+.cta-text .feature-list {
+    margin-bottom: 40px;
+}
+
+/* O botão já está pronto, só precisamos garantir que ele ocupe 100% da largura se quisermos */
+.cta-text .btn {
+    width: 100%; /* Faz o botão ocupar toda a largura da coluna de texto */
 }
