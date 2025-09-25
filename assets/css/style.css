@@ -1,0 +1,115 @@
+/* ========= 1. VARIÁVEIS GLOBAIS E RESET ========= */
+
+:root {
+    /* Paleta de Cores */
+    --color-background: #FDFBF8;
+    --color-text-dark: #4a2f2b;
+    --color-text-light: #c5a995;
+    --color-brand-green: #8bc34a;
+
+    /* Tipografia */
+    --font-heading: "Georgia", "Times New Roman", serif;
+    --font-body: "Helvetica", "Arial", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body); /* Aplicando a fonte padrão para o corpo */
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading); /* Aplicando a fonte padrão para títulos */
+}
+
+/* ========= 2. LAYOUT ========= */
+.container {
+    max-width: 1320px; /* <-- Aumentamos para um valor maior, para ocupar mais espaço */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========= 3. HERO SECTION STYLES ========= */
+.hero {
+    padding-top: 80px;    /* Espaçamento superior da seção */
+    padding-bottom: 80px; /* Espaçamento inferior da seção */
+    text-align: center;   /* Centraliza todo o texto e o botão dentro da seção */
+}
+
+.hero-title {
+    font-size: 42px; /* Tamanho da fonte do título (ajuste se necessário) */
+    margin-bottom: 24px; /* Espaço abaixo do título */
+}
+
+.hero-title span {
+    color: var(--color-text-light); /* Aplica a cor de destaque */
+    font-style: italic; /* O design parece ter um leve itálico */
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6; /* Melhora a legibilidade do parágrafo */
+    max-width: 700px; /* Limita a largura do parágrafo para não ficar muito extenso */
+    margin-left: auto; /* Centraliza o parágrafo (junto com o max-width) */
+    margin-right: auto;
+    margin-bottom: 32px; /* Espaço abaixo do parágrafo */
+}
+
+.cta-button {
+    display: inline-block; /* Permite aplicar padding e margens */
+    background-color: var(--color-brand-green); /* Usa a variável de cor verde */
+    color: #FFFFFF; /* Texto do botão branco */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    padding: 16px 32px; /* Espaçamento interno do botão (vertical | horizontal) */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: transform 0.2s ease; /* Efeito suave para interação */
+}
+
+/* Efeito simples quando o mouse passa por cima */
+.cta-button:hover {
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+}
+/* Estilos para o botão com hover de ícone */
+.cta-button {
+    /* ... (Mantenha os estilos existentes do cta-button) ... */
+    position: relative; /* Essencial para posicionar o ícone dentro */
+    overflow: hidden;   /* Esconde o que sai da caixa do botão */
+    white-space: nowrap; /* Garante que o texto e ícone fiquem na mesma linha */
+}
+
+.cta-button .button-text {
+    display: inline-block;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Transição para o texto */
+}
+
+.cta-button .button-icon {
+    position: absolute; /* Posicionamento absoluto dentro do botão */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Centraliza e esconde inicialmente */
+    height: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+    width: auto;
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Transição para o ícone */
+}
+
+/* Efeito no hover */
+.cta-button:hover .button-text,
+.cta-button:focus .button-text{
+    transform: translateX(-100%); /* Move o texto para fora da esquerda */
+    opacity: 0;
+}
+
+.cta-button:hover .button-icon,
+.cta-button:focus .button-icon {
+    transform: translate(-50%, -50%) scale(1); /* Mostra e centraliza o ícone */
+    opacity: 1;
+}
