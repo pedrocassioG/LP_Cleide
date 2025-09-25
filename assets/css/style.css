@@ -50,16 +50,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ----- Botões ----- */
 .btn {
-    display: inline-block;
+    display: inline-flex; /* Para alinhar ícone e texto */
+    align-items: center;  /* Para alinhar ícone e texto */
+    gap: 0.75rem;         /* Espaço entre ícone e texto */
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
-    padding: 16px 32px;
+    padding: 12px 24px; /* Ajustei o padding para ficar melhor com o ícone */
     border: none;
-    border-radius: 8px;
-    transition: transform 0.2s ease;
+    border-radius: 50px; /* Borda arredondada para todos */
+    transition: transform 0.2s ease, background-color 0.3s ease;
     cursor: pointer;
+    overflow: hidden; /* Adicionado para garantir consistência */
 }
 
 .btn:hover,
@@ -80,8 +83,6 @@ h1, h2, h3, h4, h5, h6 {
 .btn--secondary {
     background: linear-gradient(to bottom, #d7ccc8, #bcaaa4);
     color: var(--color-primary-dark);
-    border: 1px solid var(--color-text-light-alt);
-    border-radius: 50px;
 }
 
 /* Efeito de hover com ícone (aplicado no botão primário) */
@@ -112,6 +113,36 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
+
+/* Animação do ícone do botão secundário */
+.btn__icon-wrapper {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    background-color: #FFFFFF; /* Fundo branco para o círculo */
+    color: var(--color-primary-dark); /* Cor do ícone (SVG herda com currentColor) */
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.btn__icon-svg--copy {
+    position: absolute;
+    transform: translate(-150%, 150%);
+}
+
+.btn--secondary:hover .btn__icon-svg:first-child {
+    transform: translate(150%, -150%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn--secondary:hover .btn__icon-svg--copy {
+    transform: translate(0);
+    transition: transform 0.3s ease-in-out 0.1s;
+}
+
 
 /* ==========================================================================
    4. ESTILOS DAS SEÇÕES
@@ -192,4 +223,75 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     font-size: 20px;
     color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   5. AUDIENCE SECTION STYLES (VERSÃO CORRIGIDA)
+   ========================================================================== */
+
+.audience {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: var(--color-background);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+    color: var(--color-text-dark);
+}
+
+.section-title span {
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
+.audience-grid {
+    display: grid;
+    /* MUDANÇA AQUI: Colunas dos ícones com tamanho automático para juntar ao centro */
+    grid-template-columns: 1fr auto auto 1fr; 
+    grid-template-rows: repeat(2, auto);
+    gap: 20px 40px;
+    align-items: center;
+    position: relative;
+}
+
+/* Posicionamento e alinhamento dos textos */
+.audience-text--1 { grid-column: 1 / 2; grid-row: 1; justify-self: end; text-align: right; } /* Alinhamento corrigido */
+.audience-text--2 { grid-column: 4 / 5; grid-row: 1; justify-self: start; text-align: left; }
+.audience-text--3 { grid-column: 1 / 2; grid-row: 2; justify-self: end; text-align: right; } /* Alinhamento corrigido */
+.audience-text--4 { grid-column: 4 / 5; grid-row: 2; justify-self: start; text-align: left; }
+
+/* Posicionamento dos ícones (sem mudança) */
+.audience-icon--1 { grid-column: 2 / 3; grid-row: 1; }
+.audience-icon--2 { grid-column: 3 / 4; grid-row: 1; }
+.audience-icon--3 { grid-column: 2 / 3; grid-row: 2; }
+.audience-icon--4 { grid-column: 3 / 4; grid-row: 2; }
+
+.audience-text h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--color-text-dark);
+}
+
+.audience-text p {
+    font-size: 16px;
+    color: var(--color-text-dark);
+    opacity: 0.8;
+}
+
+.audience-icon {
+    width: 120px;
+    height: 120px;
+    background-color: #F3EAE4;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+}
+
+.audience-icon img {
+    width: 60px;
+    height: 60px;
 }
