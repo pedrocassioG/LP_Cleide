@@ -295,3 +295,77 @@ h1, h2, h3, h4, h5, h6 {
     width: 60px;
     height: 60px;
 }
+
+/* ==========================================================================
+   6. TESTIMONIALS SECTION STYLES
+   ========================================================================== */
+
+.testimonials {
+    background-color: var(--color-primary-dark);
+    padding: 80px 0;
+}
+
+.section-title--light {
+    color: #FFFFFF;
+}
+
+.swiper {
+    width: 100%;
+    padding-bottom: 60px; /* Espaço para os botões de navegação */
+}
+
+.testimonial-card {
+    background-color: var(--color-background);
+    border-radius: 20px;
+    padding: 30px;
+    height: 100%; /* Garante que os cards tenham a mesma altura */
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+}
+
+.testimonial-text {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Customização das flechas de navegação do Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #FFFFFF;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: auto; /* Remove o posicionamento vertical padrão */
+    bottom: 0; /* Posiciona na parte de baixo */
+}
+
+/* Ajuste fino do posicionamento horizontal */
+.swiper-button-prev {
+    left: calc(50% - 45px); /* Centraliza e move para a esquerda */
+}
+
+.swiper-button-next {
+    right: calc(50% - 45px); /* Centraliza e move para a direita */
+}
+
+/* Ajusta o tamanho dos ícones dentro das flechas */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 20px;
+}
