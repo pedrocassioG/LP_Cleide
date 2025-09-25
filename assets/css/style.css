@@ -419,3 +419,81 @@ h1, h2, h3, h4, h5, h6 {
 .cta-text .btn {
     width: 100%; /* Faz o botão ocupar toda a largura da coluna de texto */
 }
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* --- Breakpoint para Tablets e telas menores (até 992px) --- */
+@media (max-width: 992px) {
+    /* Diminui um pouco os títulos grandes */
+    .hero-title {
+        font-size: 36px;
+    }
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    /* Ajusta o grid da seção 'About' e 'CTA' */
+    .about-content, .cta-content {
+        grid-template-columns: 1fr; /* Muda para 1 coluna */
+        gap: 40px;
+    }
+
+    /* Inverte a ordem na seção 'About' para imagem vir antes do texto no mobile */
+    .about-image {
+        order: -1; /* Truque para fazer a imagem vir primeiro */
+    }
+
+    /* ----- Centraliza o botão da seção 'About' no mobile ----- */
+    .about-text {
+        text-align: center; /* Manda tudo para o centro */
+    }
+
+    .about-title,
+    .about-list {
+        text-align: left; /* ...mas força o título e a lista a voltarem para a esquerda */
+    }
+}
+
+/* --- Breakpoint para Celulares (até 768px) --- */
+@media (max-width: 768px) {
+    /* Diminui ainda mais o título principal no celular */
+    .hero-title {
+        font-size: 32px;
+    }
+        /* ----- CORREÇÃO DO BOTÃO ----- */
+    .btn {
+        padding: 16px 20px; /* Reduz um pouco o padding lateral */
+        font-size: 14px; /* Diminui a fonte para ajudar a caber */
+    }
+
+    .btn--primary {
+        white-space: normal; /* ESSA É A LINHA MÁGICA: permite que o texto quebre */
+        line-height: 1.3; /* Melhora o espaçamento se o texto quebrar em 2 linhas */
+    }
+
+    /* Ajusta o grid complexo da seção 'Audience' */
+    .audience-grid {
+        grid-template-columns: 1fr; /* Muda para 1 coluna */
+        gap: 40px;
+    }
+
+    /* Força cada item a ocupar a coluna inteira e centraliza */
+    .audience-text, .audience-icon {
+        grid-column: 1 / -1;
+        justify-self: center;
+        text-align: center;
+    }
+
+    /* Garante que a ordem visual seja Texto > Ícone no celular */
+    .audience-text--1 { grid-row: 1; }
+    .audience-icon--1 { grid-row: 2; }
+    .audience-text--2 { grid-row: 3; }
+    .audience-icon--2 { grid-row: 4; }
+    .audience-text--3 { grid-row: 5; }
+    .audience-icon--3 { grid-row: 6; }
+    .audience-text--4 { grid-row: 7; }
+    .audience-icon--4 { grid-row: 8; }
+}
