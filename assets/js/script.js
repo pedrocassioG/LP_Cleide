@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     spaceBetween: 30,
     centeredSlides: true,
 
+    // --- ADICIONE ESTE BLOCO PARA O AUTOPLAY ---
+    autoplay: {
+      delay: 4000, // Tempo em milissegundos (4000ms = 4 segundos)
+      disableOnInteraction: false, // Continua o autoplay mesmo depois do usuário interagir
+    },
+    // -----------------------------------------
+
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
