@@ -144,6 +144,22 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform 0.3s ease-in-out 0.1s;
 }
 
+/* Estilo para o botão CTA da seção Audience */
+.audience-cta {
+    text-align: center; /* Centraliza o botão */
+    margin-top: 60px;   /* Cria um espaço acima do botão */
+}
+
+/* ----- Texto de Apoio do Botão ----- */
+.button-subtext {
+    margin-top: 16px; /* Espaço entre o botão e o texto */
+    font-size: 14px;  /* Fonte um pouco menor */
+    font-weight: 500;
+    color: var(--color-text-dark);
+    opacity: 0.9;     /* Levemente sutil para não competir com o botão */
+    text-align: center;
+}
+
 
 /* ==========================================================================
    4. ESTILOS DAS SEÇÕES
