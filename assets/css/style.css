@@ -416,6 +416,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .benefit-card__icon {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .benefit-card__icon img {
@@ -428,6 +429,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     color: #FFFFFF;
     margin-bottom: 12px;
+    text-align: center;
 }
 
 .benefit-card__text {
@@ -435,6 +437,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
     color: var(--color-text-light-alt);
     opacity: 0.9;
+    text-align: center;
 }
 
 /* ==========================================================================
