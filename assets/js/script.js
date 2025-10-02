@@ -35,3 +35,29 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+  // --- CÓDIGO DO FAQ (ACORDEÃO) ---
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      
+      // Fecha todos os outros que estiverem abertos
+      faqQuestions.forEach(otherButton => {
+        if (otherButton !== button && otherButton.classList.contains('active')) {
+          otherButton.classList.remove('active');
+          otherButton.nextElementSibling.style.maxHeight = null;
+        }
+      });
+      
+      // Abre ou fecha o item clicado
+      button.classList.toggle('active');
+      if (button.classList.contains('active')) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      } else {
+        answer.style.maxHeight = null;
+      }
+    });
+  });
+
