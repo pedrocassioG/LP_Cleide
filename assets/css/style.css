@@ -380,6 +380,62 @@ h1, h2, h3, h4, h5, h6 {
     width: 60px;
     height: 60px;
 }
+/* ==========================================================================
+   9. BENEFITS SECTION STYLES
+   ========================================================================== */
+
+.benefits {
+    background-color: var(--color-primary-dark);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.benefits .section-title .highlight {
+    color: var(--color-text-light);
+}
+
+.benefits-grid {
+    display: flex;
+    flex-wrap: wrap; /* <-- ESTA É A LINHA CRUCIAL QUE CORRIGE A QUEBRA */
+    justify-content: center;
+    gap: 30px;
+    text-align: left;
+    margin-top: 60px;
+}
+
+.benefit-card {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    border-radius: 16px;
+    height: 100%;
+    flex: 1 1 30%; /* Base para 3 colunas, com flexibilidade */
+    max-width: 350px; /* Largura máxima para consistência */
+    /* --- BORDA DOURADA FIXA --- */
+    border: 2px solid var(--color-text-light);
+}
+
+.benefit-card__icon {
+    margin-bottom: 20px;
+}
+
+.benefit-card__icon img {
+    height: 40px; /* Altura padrão para os ícones */
+    width: auto;
+}
+
+.benefit-card__title {
+    font-size: 20px;
+    font-family: var(--font-heading);
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.benefit-card__text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-light-alt);
+    opacity: 0.9;
+}
 
 /* ==========================================================================
    6. TESTIMONIALS SECTION STYLES
@@ -549,6 +605,9 @@ h1, h2, h3, h4, h5, h6 {
     flex-basis: 45%;
 }
 
+.benefits .benefit-card {
+    flex-basis: 45%; /* 2 colunas em tablets */
+}
 }
 
 /* --- Breakpoint para Celulares (até 768px) --- */
@@ -593,5 +652,8 @@ h1, h2, h3, h4, h5, h6 {
     /* Altera o grid de 'dores' para 1 coluna em celulares */
 .pain-card {
     flex-basis: 100%;
+}
+.benefits .benefit-card {
+    flex-basis: 100%; /* 1 coluna em celulares */
 }
 }
